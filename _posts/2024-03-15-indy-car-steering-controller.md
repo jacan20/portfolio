@@ -1,30 +1,27 @@
-# Steering into the Future: Autonomous Control for an Indy Car
-
-When I look back at the autonomous Indy car project for my System Dynamics and Controls course, I’m filled with excitement about the challenges we tackled and the innovative solutions we developed. Our project—affectionately dubbed “We’re so Good it Hertz”—was not only a deep dive into control theory but also a hands-on exploration of real-world dynamics at high speed.
-
+---
+layout: post
+title: "Autonomous Indy Car Steering Control"
+categories: misc
+---
 ## Project Overview
 
-Working alongside my talented teammates—Caroline Perkinson, Austin Phillips, James Cannon, and Noah Murphree—we set out to design a steering control system that could manage the aggressive dynamics of an Indy car. The project was structured into multiple phases:
+Working alongside my talented teammates as a team of four, we set out to design a steering control system that could manage the aggressive dynamics of an Indy car. The project was structured into multiple phases:
 
 - **System Modeling:** We began by deriving the equations of motion that describe the vehicle dynamics.
 - **Control Design:** Using the derived equations, we developed transfer functions and state-space representations to capture the system’s behavior.
 - **Analysis Techniques:** Our approach included classical methods like Root Locus and Bode Plot analysis to assess stability and performance. We also ran step response simulations to verify our control design.
 - **Validation:** Finally, the performance of the steering control system was evaluated in a simulated Indy 500 track environment at a top speed of **108 m/s**, ensuring that our design was robust under high-speed conditions.
 
-The detailed progression of our work—from the foundational equations to the final performance evaluation—is outlined in our final PowerPoint presentation (*MECH 3140 Final Project.pptx*).
+## System Modeling & Vehicle Dynamics
 
-## Diving into the Details
-
-### System Modeling & Vehicle Dynamics
-
-#### The Bicycle Vehicle Dynamics Model
+### The Bicycle Vehicle Dynamics Model
 
 The bicycle model is a widely used simplification in vehicle dynamics that represents a car with two wheels—one at the front and one at the rear. This model captures the essential lateral and yaw dynamics, making it a powerful tool for designing and analyzing steering control systems.
 
 **Key Features of the Model:**
 
 - **Lateral Dynamics:**  
-  The model accounts for the lateral (side-to-side) movement of the vehicle. It explains how the vehicle responds to steering inputs by generating lateral tire forces.
+  The model accounts for the lateral movement of the vehicle. It explains how the vehicle responds to steering inputs by generating lateral tire forces.
   
 - **Yaw Dynamics:**  
   It also models the yaw motion—the rotation of the vehicle about its vertical axis. The yaw rate is influenced by the distribution of mass and the forces acting at the front and rear tires.
@@ -32,11 +29,7 @@ The bicycle model is a widely used simplification in vehicle dynamics that repre
 - **Simplified Representation:**  
   By combining the left and right wheels into a single front and rear wheel, the bicycle model reduces the complexity of the vehicle dynamics while preserving the key behaviors necessary for control analysis.
 
-The tire forces are typically modeled based on the slip angles:
-$$
-\alpha_f = \delta - \frac{v + a\,r}{u}, \quad \alpha_r = -\frac{v - b\,r}{u},
-$$
-where \(\delta\) is the steering angle, \(v\) is the lateral velocity, \(u\) is the forward velocity, \(r\) is the yaw rate, and \(a\) and \(b\) are the distances from the center of gravity to the front and rear axles respectively.
+
 
 **Reference Figure:**  
 A schematic diagram that illustrates the key components of the bicycle model—showing the vehicle's mass, tire forces, and geometry—is available in the uploaded file `bsintire.jpg`. This figure provides a clear visual representation of how the vehicle's dynamics are modeled using this approach.
@@ -64,8 +57,8 @@ Here:
 #### Cascaded PD Controller
 
 Our control strategy employed a **cascaded PD controller** with two loops:
-- **Outer Loop:** Converts voltage commands to tire angle commands.
-- **Inner Loop:** Maps tire angle commands to vehicle angle responses.
+- **Outer Loop:** Controls an input voltage on a motor on the steering column to front tire angle.
+- **Inner Loop:** Maps tire angle to the vehicle yaw angle response.
 
 *Note: The voltage-to-tire angle model is omitted for brevity.*
 
