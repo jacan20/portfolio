@@ -6,7 +6,9 @@ categories: []
 ---
 This project approximates π using a Monte Carlo simulation—a method I originally developed in high school and still appreciate as a college student. The basic idea is to randomly generate points ("darts") within a square that encloses a circle. By counting how many darts land inside the circle and comparing that to the total number of darts, π is estimated using the formula:
 
-<iframe src="https://editor.p5js.org/jacan/full/g3i6vUn2m" width="80%" height="900" style="border:0;"></iframe>
+<div style="text-align: center;">
+  <iframe src="https://example.com" width="80%" height="800" frameborder="0" allowfullscreen></iframe>
+</div>
 
 $$ \pi \approx 4 \times \frac{\text{Number of Darts Inside the Circle}}{\text{Total Number of Darts}} $$
 
