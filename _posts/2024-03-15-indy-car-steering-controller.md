@@ -40,7 +40,9 @@ A schematic diagram that illustrates the key components of the bicycle model—s
 $$ \sum F = m \bigl(v_{\text{car}}\dot{\psi} + v_{\text{car}}\beta\bigr) = -C_r\,\beta +\frac{C_rb}{V_{car}}\Psi - C_f\bigl(\beta - \delta\bigr) - \frac{C_fa}{V_{car}}\Psi $$
 
 **Summation of Moments**  
-$$ \sum M = J\,\ddot{\psi} = -b(\frac(-C_r}{V_{Car}}(V_{car}\beta - \dot{\Psi}b)) + a(\frac(-C_f}{V_{Car}}(V_{car}\beta - V_{car}\delta + \dot{\Psi}a)) $$
+$$
+\sum M = J\,\ddot{\psi} = -b\left(\frac{-C_r}{V_{Car}} \left(V_{car}\beta - \dot{\Psi}b\right)\right) + a\left(\frac{-C_f}{V_{Car}} \left(V_{car}\beta - V_{car}\delta + \dot{\Psi}a\right)\right)
+$$
 
 Here:
 - $m$ is the vehicle mass.
