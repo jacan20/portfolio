@@ -4,14 +4,11 @@ title: "Monte Carlo Dart Board Pi Approximator"
 date: 2021-03-14
 categories: []
 ---
+This project approximates π using a Monte Carlo simulation—a method I originally developed in high school and still appreciate as a college student. The basic idea is to randomly generate points ("darts") within a square that encloses a circle. By counting how many darts land inside the circle and comparing that to the total number of darts, π is estimated using the formula:
 
 <iframe src="https://editor.p5js.org/jacan/full/g3i6vUn2m" width="80%" height="900" style="border:0;"></iframe>
 
-This project approximates π using a Monte Carlo simulation—a method I originally developed in high school and still appreciate as a college student. The basic idea is to randomly generate points ("darts") within a square that encloses a circle. By counting how many darts land inside the circle and comparing that to the total number of darts, π is estimated using the formula:
-
-$$ \[
-\pi \approx 4 \times \frac{\text{Number of Darts Inside the Circle}}{\text{Total Number of Darts}}
-\] $$
+$$ \pi \approx 4 \times \frac{\text{Number of Darts Inside the Circle}}{\text{Total Number of Darts}} $$
 
   The simulation computes the estimated value of π by multiplying the ratio of darts that fall inside the circle by 4. It then calculates the percent error relative to the actual value of π. These statistics are updated live in the information panel.  
 
