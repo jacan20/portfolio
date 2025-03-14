@@ -40,17 +40,17 @@ A schematic diagram that illustrates the key components of the bicycle model—s
 $$ \sum F = m \bigl(v_{\text{car}}\dot{\psi} + v_{\text{car}}\beta\bigr) = -C_r\,\beta +\frac{C_rb}{V_{car}}\Psi - C_f\bigl(\beta - \delta\bigr) - \frac{C_fa}{V_{car}}\Psi $$
 
 **Summation of Moments**  
-$$ \sum M = J\,\dot{\psi} = -b\,C_r\,\beta + a\,C_f\bigl(\beta - \delta\bigr) $$
+$$ \sum M = J\,\ddot{\psi} = -b(\frac(-C_r}{V_{Car}}(V_{car}\beta - \dot{\Psi}b)) + a(\frac(-C_f}{V_{Car}}(V_{car}\beta - V_{car}\delta + \dot{\Psi}a)) $$
 
 Here:
-- \(m\) is the vehicle mass.
-- \(v_{\text{car}}\) is the (constant) forward velocity.
-- \(\dot{\psi}\) is the yaw rate.
-- \(\beta\) is the sideslip angle.
-- \(\delta\) is the steering angle.
-- \(C_f\) and \(C_r\) are the cornering stiffnesses of the front and rear tires, respectively.
-- \(J\) is the yaw moment of inertia.
-- \(a\) and \(b\) are the distances from the vehicle’s center of gravity to the front and rear axles, respectively.
+- $m$ is the vehicle mass.
+- $v_{\text{car}}$ is the (constant) forward velocity.
+- $\dot{\psi}$ is the yaw rate.
+- $\beta$ is the sideslip angle.
+- $\delta$ is the steering angle.
+- $C_f$ and $C_r$ are the cornering stiffnesses of the front and rear tires, respectively.
+- $J$ is the yaw moment of inertia.
+- $a$ and $b$ are the distances from the vehicle’s center of gravity to the front and rear axles, respectively.
 
 ### Control Strategy
 
