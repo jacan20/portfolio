@@ -37,7 +37,7 @@ A schematic diagram that illustrates the key components of the bicycle model—s
 #### System Modeling: Equations of Motion
 
 **Summation of Forces**  
-$$ \sum F = m \bigl(v_{\text{car}}\dot{\psi} + v_{\text{car}}\beta\bigr) = -C_r\,\beta - C_f\bigl(\beta - \delta\bigr) $$
+$$ \sum F = m \bigl(v_{\text{car}}\dot{\psi} + v_{\text{car}}\beta\bigr) = -C_r\,\beta +\frac{C_rb}{V_{car}}\Psi - C_f\bigl(\beta - \delta\bigr) - \frac{C_fa}{V_{car}}\Psi $$
 
 **Summation of Moments**  
 $$ \sum M = J\,\dot{\psi} = -b\,C_r\,\beta + a\,C_f\bigl(\beta - \delta\bigr) $$
