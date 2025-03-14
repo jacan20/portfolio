@@ -45,16 +45,16 @@ $$
 $$
 
 Here:
-| **Symbol**        | **Definition**                                                                                                                                                                  |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| $m$               | The vehicle mass.                                                                                                                                                               |
-| $v_{\text{car}}$  | The constant forward velocity of the vehicle.                                                                                                                                   |
-| $\dot{\psi}$      | The yaw rate, representing the rate of change of the vehicle’s yaw angle.                                                                                                        |
-| $\beta$           | The sideslip angle, which quantifies the angle between the vehicle’s actual velocity vector and its longitudinal axis.                                                           |
-| $\delta$          | The steering angle, the angle by which the front wheels are turned.                                                                                                              |
-| $C_f$ and $C_r$   | The cornering stiffnesses of the front and rear tires, respectively, indicating how much lateral force each tire generates per unit of slip angle.                                |
-| $J$               | The yaw moment of inertia of the vehicle, which quantifies its resistance to changes in yaw rate.                                                                                |
-| $a$ and $b$       | The distances from the vehicle’s center of gravity (CG) to the front and rear axles, respectively.                                                                               |
+- $\(m\)$: The vehicle mass.
+- $\(v_{\text{car}}\)$: The constant forward velocity of the vehicle.
+- $\(\dot{\psi}\)$: The yaw rate, representing the rate of change of the vehicle’s yaw angle.
+- $\(\beta\)$: The sideslip angle, which quantifies the angle between the vehicle’s actual velocity vector and its longitudinal axis.
+- $\(\delta\)$: The steering angle, the angle by which the front wheels are turned.
+- $\(C_f\)$: The cornering stiffness of the front tires, indicating how much lateral force the tires generate per unit of slip angle.
+- $\(C_r\)$: The cornering stiffness of the rear tires, similar to \(C_f\) but for the rear axle.
+- $\(J\)$: The yaw moment of inertia of the vehicle, which quantifies its resistance to changes in yaw rate.
+- $\(a\)$: The distance from the vehicle’s center of gravity (CG) to the front axle.
+- $\(b\)$: The distance from the vehicle’s center of gravity (CG) to the rear axle.
 
 
 ### Control Strategy
