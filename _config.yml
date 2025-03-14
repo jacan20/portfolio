@@ -1,7 +1,6 @@
 title: James W. Cannon
 author:
   name: James Cannon
-  email: jwc0081@auburn.edu
 
 description: >
   James W. Cannon a passionate Mechanical Engineering student at Auburn University,
@@ -14,7 +13,7 @@ theme: minima
 # remote_theme: jekyll/minima
 
 plugins:
-  - jekyll-feed
+#  - jekyll-feed
   - jekyll-seo-tag
 
 minima:
