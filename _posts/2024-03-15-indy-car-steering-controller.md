@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MECH 3140 - Autonomous Indy Car Steering Control"
-categories: misc
+categories: [Academic Project]
 ---
 
 ## Introduction

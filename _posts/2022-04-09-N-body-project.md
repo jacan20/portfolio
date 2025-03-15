@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "N-Body Newtonian Gravitation Simulation"
-categories: misc
+categories: [Personal Project]
 ---
 
 # N-Body Gravitational Simulation: A Journey from High School to Modern Modeling

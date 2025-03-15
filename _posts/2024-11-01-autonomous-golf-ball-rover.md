@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Autonomous Golf Ball Rover"
+title: "Autonomous Golf Ball Launching/ Catching Rover"
 date: 2024-11-01
-categories: []
+categories: [Academic Project]
 ---
 
 Details coming soon.

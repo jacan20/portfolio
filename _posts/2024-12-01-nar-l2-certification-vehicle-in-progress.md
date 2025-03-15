@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Nar L2 Certification Vehicle In Progress"
+title: "NAR/Tripoli L2 Certification Vehicle In Progress"
 date: 2024-12-01
-categories: []
+categories: [Personal Project]
 ---
 
 Details coming soon.

@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Personal Projects"
+permalink: /Personal-projects/
+---
+
+<h1>Personal Projects</h1>
+<ul>
+  {% for post in site.posts %}
+    {% if post.categories contains "Personal Project" %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a> 
+        - {{ post.date | date_to_string }}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

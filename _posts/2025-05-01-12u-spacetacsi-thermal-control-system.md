@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "12U Spacetacsi Thermal Control System"
+title: "ACSI 12U SpaceTACSI Thermal Control System (Senior Design)"
 date: 2025-05-01
-categories: []
+categories: [Acadmemic Project]
 ---
 
 Details coming soon.
