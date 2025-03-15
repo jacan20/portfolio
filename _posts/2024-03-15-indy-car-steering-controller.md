@@ -3,6 +3,36 @@ layout: post
 title: "MECH 3140 - Autonomous Indy Car Steering Control"
 categories: misc
 ---
+
+## Introduction
+
+In this final group project for MECH 3140, our team of four set out to develop a steering control system for the autonomous IndyLight race car (a Dallara IL-15 used in the Indy Autonomous Challenge). The project is done entirely in MATLAB, with a password protected MATLAB function (run_indy_car.p) serving as the simulated model of the vehicle. The setup involves a DC motor on the steering column, with the voltage to that motor being the input to the system. The project's primary goal is to design a robust controller that enables the vehicle to navigate a racetrack efficiently while meeting stringent performance criteria.
+
+## Project Objectives and Requirements
+
+The assignment document outlines several key objectives and requirements:
+
+1. **Dynamic Modeling and System Identification:**
+   - **Model Development:**  
+     Derive the system dynamics by summing forces in the lateral direction and moments about the vehicle's center of gravity. This involves formulating the equations of motion for both lateral and yaw dynamics.
+   - **Transfer Function Creation:**  
+     Combine the derived equations to develop a transfer function with the steering input (voltage command, through the steering mechanism) as the input and the yaw rate as the output.
+
+2. **Controller Design:**
+   - **Feedback Control System:**  
+     Develop a feedback control system that computes the desired voltage to control the vehicle’s heading (yaw) or lateral position. A cascaded PD controller is implemented where:
+       - The **outer loop** converts the voltage command into a tire angle reference.
+       - The **inner loop** maps the tire angle reference to the vehicle’s actual response.
+     *Note: The voltage-to-tire angle model is omitted for brevity.*
+   - **Performance Targets:**  
+     The controller must track a constant desired reference with zero steady-state error. Key performance metrics include a settling time of less than 0.6 seconds and a maximum overshoot of less than 5% at speeds around 15 m/s.
+
+3. **Validation and Testing:**
+   - **Simulation and Real-World Testing:**  
+     Validate the developed model against the `run_Indy_car.p` simulation, ensuring that both the system identification and control system meet the expected performance across various speeds (including speeds >60 m/s).
+
+This project not only reinforces our understanding of vehicle dynamics and control theory but also challenges us to integrate modeling, simulation, and real-world validation into a cohesive system for autonomous vehicle control. Much of the work for this project is omitted, for academic honesty reasons, as versions of this project are given to students every semester.
+
 ## Project Overview
 
 Working alongside my talented teammates as a team of four, we set out to design a steering control system that could manage the aggressive dynamics of an Indy car. The project was structured into multiple phases:
@@ -82,15 +112,15 @@ One of the most thrilling parts of the project was the validation phase. We test
   
 - **Tire Angle Input/output:** 
   Here is the tire angle input to the inner control loop. You can see both the desired tire angle, and the actual tire angle the outer loop is able to deliver.
-  
+
   <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="60%"/>
 
   This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions. This was the output of the outer control loop, and the input to the inner control loop
 
-  **Simulated Vehicle Lap**
+- **Simulated Vehicle Lap:**
   Finally, putting every thing together, and running the the controller on the password protected p-code Indy Car model, we can see the indy car completeing laps at the Indianapolis Motor Speedway. The vehicle just barely stays in the lanes on the turns; any faster and our turning radius is larger than the track (and given GPS waypoints) can support.
 
-    <img src="{{ '/Media/IndyCar/indycar108track.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="80%"/>
+    <img src="{{ '/Media/IndyCar/indycar108track.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="60%"/>
 
 
 
