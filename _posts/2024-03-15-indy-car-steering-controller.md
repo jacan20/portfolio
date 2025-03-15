@@ -75,11 +75,13 @@ The following figure is the root locus used for pole-zero placement (controller 
 One of the most thrilling parts of the project was the validation phase. We tested the steering control system on an Indy 500 track simulation, achieving a remarkable top speed of **108 m/s**. This was the highest speed our controller was stable; it was also stable at lower speeds. it The high-speed tests are documented with several key figures:
 
 - **Steering Column Motor Voltage Input:**
-  <img src="{{ '/Media/IndyCar/voltage.png' | relative_url }}" alt="108 m/s Steering Motor Input" width="80%"/>
+  <img src="{{ '/Media/IndyCar/voltage.png' | relative_url }}" alt="108 m/s Steering Motor Input" width="60%"/>
+  
   *This figure captures the voltage profile applied to the motor at 108 m/s, demonstrating the input dynamics of the system. This shows an area for improvement, as the voltage rapidly cycles between its maximum and minimum values. However, the controller is able to control the vehicle, despite the +/- 24V operational limit of the motor on the steering column.*
   
 - **Tire Angle Input:** 
-  <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="80%"/>
+  <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="60%"/>
+
   *This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions. This was the output of the outer control loop, and the input to the inner control loop*
 
   **Simulated Vehicle Lap**
