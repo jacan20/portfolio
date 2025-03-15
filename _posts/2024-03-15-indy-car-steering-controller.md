@@ -6,7 +6,7 @@ categories: misc
 
 ## Introduction
 
-In this final group project for MECH 3140, our team of four set out to develop a steering control system for the autonomous IndyLight race car (a Dallara IL-15 used in the Indy Autonomous Challenge). The project is done entirely in MATLAB, with a password protected MATLAB function (run_indy_car.p) serving as the simulated model of the vehicle. The setup involves a DC motor on the steering column, with the voltage to that motor being the input to the system. The project's primary goal is to design a robust controller that enables the vehicle to navigate a racetrack efficiently while meeting stringent performance criteria.
+In this final group project for System Dynamics and Controls, our team of four set out to develop a steering control system for the autonomous IndyLight race car (a Dallara IL-15 used in the Indy Autonomous Challenge). The project is done entirely in MATLAB, with a password protected MATLAB function (run_indy_car.p) serving as the simulated model of the vehicle. The setup involves a DC motor on the steering column, with the voltage to that motor being the input to the system. The project's primary goal is to design a robust controller that enables the vehicle to navigate a racetrack efficiently while meeting stringent performance criteria.
 
 ## Project Objectives and Requirements
 
