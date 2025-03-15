@@ -1,2 +1,93 @@
-// Placeholder to allow defining custom styles that override everything else.
-// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+/* Basic dark header styling (optional) */
+.site-header {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+    margin-bottom: 2rem; /* Spacing below header */
+  }
+  
+  /* Three-column layout for top row */
+  .header-top {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* Left, center, right */
+    align-items: center;
+    gap: 1rem; /* Horizontal spacing between columns */
+  }
+  
+  /* Left column: profile pic */
+  .profile-pic {
+    max-width: 80px;   /* Adjust size as needed */
+    border-radius: 50%;
+    display: block;
+  }
+  
+  /* Center column: site title */
+  .site-title {
+    text-align: center;  /* Center text in the middle column */
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    margin: 0;
+  }
+  .site-title:hover {
+    color: #ddd;
+  }
+  
+  /* Right column: nav & about link */
+  .site-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+  }
+  .site-nav a:hover {
+    background-color: #333;
+  }
+  
+  .about-link {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+  }
+  .about-link:hover {
+    background-color: #333;
+    border-color: #444;
+  }
+  
+  /* Mobile / hamburger behavior (if desired) */
+  .nav-trigger {
+    display: none;
+  }
+  .drawer-container {
+    display: none;
+  }
+  .slab {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* Show the hamburger drawer on small screens */
+  @media (max-width: 700px) {
+    .slab {
+      display: none; /* Hide horizontal nav on small screens */
+    }
+    .drawer-container {
+      display: block;
+    }
+    .nav-trigger:checked ~ .drawer-container .drawer {
+      display: block;
+      background-color: #222;
+      padding: 1rem;
+      border: 1px solid #333;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .drawer {
+      display: none; 
+      position: absolute;
+      right: 0;
+      top: 60px; /* Adjust if your header is taller */
+    }
+  }
+  
