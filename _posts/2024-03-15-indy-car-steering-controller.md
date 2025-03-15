@@ -29,7 +29,7 @@ The bicycle model is a widely used simplification in vehicle dynamics that repre
 - **Simplified Representation:**  
   By combining the left and right wheels into a single front and rear wheel, the bicycle model reduces the complexity of the vehicle dynamics while preserving the key behaviors necessary for control analysis.
 
-<img src="{{ '/Media/IndyCar/bicycle_model.png' | relative_url }}" alt="Bicycle Vehicle Model" />
+<img src="{{ '/Media/IndyCar/bicycle_model.png' | relative_url }}" alt="Bicycle Vehicle Model" width="80%"/>
 
 
 #### System Modeling: Equations of Motion
@@ -63,6 +63,11 @@ Our control strategy employed a **cascaded PD controller** with two loops:
 - **Outer Loop:** Controls an input voltage on a motor on the steering column to front tire angle.
 - **Inner Loop:** Maps tire angle to the vehicle yaw angle response.
 
+The following figure is the root locus used for pole-zero placement (controller gain selection) for the inner loop controller. This root locus was generated for a vehicle at 108 m/s.
+
+<img src="{{ '/Media/IndyCar/108rootlocus.png' | relative_url }}" alt="108 root locus for inner controller" width="60%"/>
+
+
 *Note: The voltage-to-tire angle model is omitted for brevity.*
 
 ### Simulation and Verification
@@ -74,10 +79,15 @@ One of the most thrilling parts of the project was the validation phase. We test
   *This figure captures the voltage profile applied to the motor at 108 m/s, demonstrating the input dynamics of the system. This shows an area for improvement, as the voltage rapidly cycles between its maximum and minimum values. However, the controller is able to control the vehicle, despite the +/- 24V operational limit of the motor on the steering column.*
   
 - **Tire Angle Input:** 
-  <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="108 m/s Steering Motor Input" />
+  <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="80%"/>
   *This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions. This was the output of the outer control loop, and the input to the inner control loop*
 
-These figures, along with additional plots such as the step response (`step15b.jpg`) and frequency response (`bodePoint7.jpg`), illustrate the rigorous testing and validation process that ensured the system’s performance.
+  **Simulated Vehicle Lap**
+  Finally, putting every thing together, and running the the controller on the password protected p-code Indy Car model, we can see the indy car completeing laps at the Indianapolis Motor Speedway. The vehicle just barely stays in the lanes on the turns; any faster and our turning radius is larger than the track (and given GPS waypoints) can support.
+
+    <img src="{{ '/Media/IndyCar/indycar108track.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="80%"/>
+
+
 
 ## Lessons Learned and Future Directions
 
