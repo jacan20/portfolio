@@ -9,6 +9,7 @@ description: >
 
 theme: minima
 
+future: true
 # Use the remote_theme option if building with GitHub Pages and you want the latest version of Minima:
 # remote_theme: jekyll/minima
 
