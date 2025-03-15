@@ -33,15 +33,6 @@ The assignment document outlines several key objectives and requirements:
 
 This project not only reinforces our understanding of vehicle dynamics and control theory but also challenges us to integrate modeling, simulation, and real-world validation into a cohesive system for autonomous vehicle control. Much of the work for this project is omitted, for academic honesty reasons, as versions of this project are given to students every semester.
 
-## Project Overview
-
-Working alongside my talented teammates as a team of four, we set out to design a steering control system that could manage the aggressive dynamics of an Indy car. The project was structured into multiple phases:
-
-- **System Modeling:** We began by deriving the equations of motion that describe the vehicle dynamics.
-- **Control Design:** Using the derived equations, we developed transfer functions and state-space representations to capture the system’s behavior.
-- **Analysis Techniques:** Our approach included classical methods like Root Locus and Bode Plot analysis to assess stability and performance. We also ran step response simulations to verify our control design.
-- **Validation:** Finally, the performance of the steering control system was evaluated in a simulated Indy 500 track environment at a top speed of **108 m/s**, ensuring that our design was robust under high-speed conditions.
-
 ## System Modeling & Vehicle Dynamics
 
 ### The Bicycle Vehicle Dynamics Model
