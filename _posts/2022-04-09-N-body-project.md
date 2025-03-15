@@ -4,8 +4,6 @@ title: "N-Body Newtonian Gravitation Simulation"
 categories: [Personal Project]
 ---
 
-# N-Body Gravitational Simulation: A Journey from High School to Modern Modeling
-
 I originally developed this N-body gravitational simulation during my high school years, driven by a fascination with both physics and programming. Over time, I revisited the project and made significant improvements, refining the code and numerical methods to create a more robust and accurate simulation. 
 
 <iframe src="https://editor.p5js.org/jacan/full/OVvz2aPL4" width="100%" height="800" style="border:0;"></iframe>
