@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Autonomous Indy Car Steering Control"
+title: "MECH 3140 - Autonomous Indy Car Steering Control"
 categories: misc
 ---
 ## Project Overview
@@ -10,7 +10,7 @@ Working alongside my talented teammates as a team of four, we set out to design 
 - **System Modeling:** We began by deriving the equations of motion that describe the vehicle dynamics.
 - **Control Design:** Using the derived equations, we developed transfer functions and state-space representations to capture the system’s behavior.
 - **Analysis Techniques:** Our approach included classical methods like Root Locus and Bode Plot analysis to assess stability and performance. We also ran step response simulations to verify our control design.
-- **Validation:** Finally, the performance of the steering control system was evaluated in a simulated Indy 500 track environment at a top speed of **108 m/s** (**242 MPH**), ensuring that our design was robust under high-speed conditions.
+- **Validation:** Finally, the performance of the steering control system was evaluated in a simulated Indy 500 track environment at a top speed of **108 m/s**, ensuring that our design was robust under high-speed conditions.
 
 ## System Modeling & Vehicle Dynamics
 
@@ -29,7 +29,7 @@ The bicycle model is a widely used simplification in vehicle dynamics that repre
 - **Simplified Representation:**  
   By combining the left and right wheels into a single front and rear wheel, the bicycle model reduces the complexity of the vehicle dynamics while preserving the key behaviors necessary for control analysis.
 
-<img src="{{ '/Media/IndyCar/bicycle_model.png' | relative_url }}" alt="Bicycle Vehicle Model" width="60%"/>
+<img src="{{ '/Media/IndyCar/bicycle_model.png' | relative_url }}" alt="Bicycle Vehicle Model" />
 
 
 #### System Modeling: Equations of Motion
@@ -63,22 +63,19 @@ Our control strategy employed a **cascaded PD controller** with two loops:
 - **Outer Loop:** Controls an input voltage on a motor on the steering column to front tire angle.
 - **Inner Loop:** Maps tire angle to the vehicle yaw angle response.
 
-The root locus plot for the inner loop controller at 108 m/s is seen in this figure. 
-
-<img src="{{ '/Media/IndyCar/108RootLocus.jpg' | relative_url }}" alt="Bicycle Vehicle Model" width="25%"/>
-
-
 *Note: The voltage-to-tire angle model is omitted for brevity.*
 
-### High-Speed Evaluation
+### Simulation and Verification
 
-One of the most thrilling parts of the project was the validation phase. We tested the steering control system on an Indy 500 track simulation, achieving a remarkable top speed of **108 m/s**. The high-speed tests are documented with several key figures:
+One of the most thrilling parts of the project was the validation phase. We tested the steering control system on an Indy 500 track simulation, achieving a remarkable top speed of **108 m/s**. This was the highest speed our controller was stable; it was also stable at lower speeds. it The high-speed tests are documented with several key figures:
 
-- **Motor Voltage Input:** `MotorVoltageInput_108jpg.jpg`  
-  *This figure captures the voltage profile applied to the motor at 108 m/s, demonstrating the input dynamics of the system.*
+- **Steering Column Motor Voltage Input:**
+  <img src="{{ '/Media/IndyCar/voltage.png' | relative_url }}" alt="108 m/s Steering Motor Input" width="80%"/>
+  *This figure captures the voltage profile applied to the motor at 108 m/s, demonstrating the input dynamics of the system. This shows an area for improvement, as the voltage rapidly cycles between its maximum and minimum values. However, the controller is able to control the vehicle, despite the +/- 24V operational limit of the motor on the steering column.*
   
-- **Tire Angle Input:** `TireAngleInput_108jpg.jpg`  
-  *This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions.*
+- **Tire Angle Input:** 
+  <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="108 m/s Steering Motor Input" />
+  *This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions. This was the output of the outer control loop, and the input to the inner control loop*
 
 These figures, along with additional plots such as the step response (`step15b.jpg`) and frequency response (`bodePoint7.jpg`), illustrate the rigorous testing and validation process that ensured the system’s performance.
 
