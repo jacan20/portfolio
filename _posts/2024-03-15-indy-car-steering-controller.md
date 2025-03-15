@@ -29,10 +29,8 @@ The bicycle model is a widely used simplification in vehicle dynamics that repre
 - **Simplified Representation:**  
   By combining the left and right wheels into a single front and rear wheel, the bicycle model reduces the complexity of the vehicle dynamics while preserving the key behaviors necessary for control analysis.
 
+<img src="{{ '\_posts\Media\IndyCar\bicycle_model.png' | relative_url }}" alt="Bicycle Vehicle Model" />
 
-
-**Reference Figure:**  
-A schematic diagram that illustrates the key components of the bicycle model—showing the vehicle's mass, tire forces, and geometry—is available in the uploaded file `bsintire.jpg`. This figure provides a clear visual representation of how the vehicle's dynamics are modeled using this approach.
 
 #### System Modeling: Equations of Motion
 
