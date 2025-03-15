@@ -65,7 +65,7 @@ Our control strategy employed a **cascaded PD controller** with two loops:
 
 The following figure is the root locus used for pole-zero placement (controller gain selection) for the inner loop controller. This root locus was generated for a vehicle at 108 m/s.
 
-<img src="{{ '/Media/IndyCar/108rootlocus.png' | relative_url }}" alt="108 root locus for inner controller" width="60%"/>
+<img src="{{ '/Media/IndyCar/108RootLocus.png' | relative_url }}" alt="108 root locus for inner controller" width="60%"/>
 
 
 *Note: The voltage-to-tire angle model is omitted for brevity.*
@@ -75,14 +75,17 @@ The following figure is the root locus used for pole-zero placement (controller 
 One of the most thrilling parts of the project was the validation phase. We tested the steering control system on an Indy 500 track simulation, achieving a remarkable top speed of **108 m/s**. This was the highest speed our controller was stable; it was also stable at lower speeds. it The high-speed tests are documented with several key figures:
 
 - **Steering Column Motor Voltage Input:**
+  Here is the input voltage the to the motor on the steering column. We are not modeling the dynamics of a motor driver here. The system dynamics include that of the DC motor, and the gearboxes, etc that allow the motor to move the wheels. 
   <img src="{{ '/Media/IndyCar/voltage.png' | relative_url }}" alt="108 m/s Steering Motor Input" width="60%"/>
+
+  This figure captures the voltage profile applied to the motor at 108 m/s, demonstrating the input dynamics of the system. This shows an area for improvement, as the voltage rapidly cycles between its maximum and minimum values. However, the controller is able to control the vehicle, despite the +/- 24V operational limit of the motor on the steering column.
   
-  *This figure captures the voltage profile applied to the motor at 108 m/s, demonstrating the input dynamics of the system. This shows an area for improvement, as the voltage rapidly cycles between its maximum and minimum values. However, the controller is able to control the vehicle, despite the +/- 24V operational limit of the motor on the steering column.*
+- **Tire Angle Input/output:** 
+  Here is the tire angle input to the inner control loop. You can see both the desired tire angle, and the actual tire angle the outer loop is able to deliver.
   
-- **Tire Angle Input:** 
   <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="60%"/>
 
-  *This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions. This was the output of the outer control loop, and the input to the inner control loop*
+  This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions. This was the output of the outer control loop, and the input to the inner control loop
 
   **Simulated Vehicle Lap**
   Finally, putting every thing together, and running the the controller on the password protected p-code Indy Car model, we can see the indy car completeing laps at the Indianapolis Motor Speedway. The vehicle just barely stays in the lanes on the turns; any faster and our turning radius is larger than the track (and given GPS waypoints) can support.
