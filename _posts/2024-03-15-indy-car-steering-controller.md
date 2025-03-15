@@ -29,7 +29,7 @@ The bicycle model is a widely used simplification in vehicle dynamics that repre
 - **Simplified Representation:**  
   By combining the left and right wheels into a single front and rear wheel, the bicycle model reduces the complexity of the vehicle dynamics while preserving the key behaviors necessary for control analysis.
 
-<img src="{{ '/Media/IndyCar/bicycle_model.png' | relative_url }}" alt="Bicycle Vehicle Model" width=60%/>
+<img src="{{ '/Media/IndyCar/bicycle_model.png' | relative_url }}" alt="Bicycle Vehicle Model" width="60%"/>
 
 
 #### System Modeling: Equations of Motion
@@ -65,7 +65,7 @@ Our control strategy employed a **cascaded PD controller** with two loops:
 
 The root locus plot for the inner loop controller at 108 m/s is seen in this figure. 
 
-<img src="{{ '/Media/IndyCar/108RootLocus.jpg' | relative_url }}" alt="Bicycle Vehicle Model" width=25%/>
+<img src="{{ '/Media/IndyCar/108RootLocus.jpg' | relative_url }}" alt="Bicycle Vehicle Model" width="25%"/>
 
 
 *Note: The voltage-to-tire angle model is omitted for brevity.*
