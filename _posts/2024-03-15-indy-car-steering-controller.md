@@ -86,7 +86,7 @@ Our control strategy employed a **cascaded PD controller** with two loops:
 
 The following figure is the root locus used for pole-zero placement (controller gain selection) for the inner loop controller. This root locus was generated for a vehicle at 108 m/s.
 
-<img src="{{ '/Media/IndyCar/108RootLocus.png' | relative_url }}" alt="108 root locus for inner controller" width="60%"/>
+<img src="{{ '/Media/IndyCar/108RootLocus.jpg' | relative_url }}" alt="108 root locus for inner controller" width="60%"/>
 
 
 *Note: The voltage-to-tire angle model is omitted for brevity.*
