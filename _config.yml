@@ -18,7 +18,6 @@ plugins:
   - jekyll-seo-tag
 
 minima:
-  skin: dark
   nav_pages:
     - about.md
   # Uncomment the following line if you want to show excerpts on the homepage.

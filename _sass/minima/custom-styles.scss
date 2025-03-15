@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* Basic dark header styling (optional) */
 .site-header {
     background-color: #222;
@@ -89,5 +90,33 @@
       right: 0;
       top: 60px; /* Adjust if your header is taller */
     }
+=======
+.section-intro {
+    font-size: 1.1rem;              // slightly larger than normal text
+    line-height: 1.5;              // add comfortable spacing between lines
+    color: lighten($text-color, 15%);
+    margin-bottom: 2rem;           // space below the intro paragraph
+    max-width: 40em;               // optional: limit width for readability
+  }
+
+  .site-footer {
+    color: $text-color;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .site-footer a {
+  
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact {
+    margin-bottom: 1rem;
+>>>>>>> Stashed changes
   }
   
