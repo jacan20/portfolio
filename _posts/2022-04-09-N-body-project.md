@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "N-Body Newtonian Gravitation Simulation"
+date: 2022-05-09
 categories: [Personal Project]
 ---
 

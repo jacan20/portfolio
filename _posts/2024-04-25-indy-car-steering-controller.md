@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MECH 3140 - Autonomous Indy Car Steering Control"
+date: 2024-04-25
 categories: [Academic Project]
 ---
 
