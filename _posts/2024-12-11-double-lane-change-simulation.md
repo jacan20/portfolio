@@ -19,7 +19,7 @@ The study was designed around the ISO 3888-2 test standard. We collected data fr
 - **Model-Based Navigation:** Tuning a lateral dynamics (bicycle) model of the vehicle with the collected test data.
 
 <br>
-<img src="/Media/navproject/iso38888-2.png" alt="ISO 3888-2 Standard Layout" style="max-width: 100%;"/>
+<img src="/portfolio/Media/navproject/iso38888-2.png" alt="ISO 3888-2 Standard Layout" style="max-width: 100%;"/>
 
 ## Methodology
 
@@ -34,7 +34,7 @@ We used two methods to initialize the navigation systems:
    The vehicle’s initial motion defined a rotation matrix, aligning the IMU’s orientation with the desired navigation frame.
 
 <br>
-<img src="/Media/navproject/kiasoul.jpg" alt="Instrumented Kia" style="max-width: 100%;"/>
+<img src="/portfolio/Media/navproject/kiasoul.jpg" alt="Instrumented Kia" style="max-width: 100%;"/>
 
 ### IMU Data Processing
 
@@ -42,7 +42,7 @@ To ensure reliable sensor data, we applied several processing techniques:
 
 - **Filtering:** A 4th-order Butterworth low-pass filter with a 25 Hz cutoff smoothed accelerometer and gyroscope signals.
 
-  <img src="/Media/navproject/imu_data_filtered.png" alt="Filtered IMU Data" style="max-width: 100%;"/>
+  <img src="/portfolio/Media/navproject/imu_data_filtered.png" alt="Filtered IMU Data" style="max-width: 100%;"/>
 
 - **Bias Correction:** Stationary readings helped subtract inherent sensor biases and address gravity in a straightforward manner, albeit with minor residual errors.
 
@@ -83,7 +83,7 @@ $$
 $$
 
 <br>
-<img src="/Media/navproject/imu3d.jpg" alt="IMU Mechanization Schematic" style="max-width: 100%;"/>
+<img src="/portfolio/Media/navproject/imu3d.jpg" alt="IMU Mechanization Schematic" style="max-width: 100%;"/>
 
 ### Model Integration (Bicycle Model)
 
@@ -92,7 +92,7 @@ We fed speedometer velocities and measured steering angles into a simplified bic
 where \\((x, y)\\) is the vehicle’s position in the plane, \\(\psi\\) is the heading, \\(v\\) is the longitudinal velocity, \\(L\\) is the wheelbase, and \\(\delta\\) is the steering angle.
 
 <br>
-<img src="/Media/navproject/bicycle_model.png" alt="Bicycle Model Diagram" style="max-width: 100%;"/>
+<img src="/portfolio/Media/navproject/bicycle_model.png" alt="Bicycle Model Diagram" style="max-width: 100%;"/>
 
 ## Results & Insights
 
@@ -104,12 +104,12 @@ We compared the position estimates from:
 Our analysis revealed that the model-based navigation, combined with IMU initialization via the vehicle’s initial motion, produced the lowest positional error over time. This hybrid approach outperformed the static GPS-heading method for INS orientation.
 
 <br>
-<img src="/Media/navproject/methodscompared2D.jpg" alt="Comparison of Methods" style="max-width: 100%;"/>
+<img src="/portfolio/Media/navproject/methodscompared2D.jpg" alt="Comparison of Methods" style="max-width: 100%;"/>
 
 ### Error Over Time
 
 <br>
-<img src="/Media/navproject/error.jpg" alt="Positional Error Plot" style="max-width: 100%;"/>
+<img src="/portfolio/Media/navproject/error.jpg" alt="Positional Error Plot" style="max-width: 100%;"/>
 
 As shown above, the model-based path remains closest to the ground truth.
 
