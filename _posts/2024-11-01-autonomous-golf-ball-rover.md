@@ -22,7 +22,7 @@ The hoop was about 2 ft in diameter and could be set at either of two heights ab
 
 ## My Role
 
-I was responsible for the electronics and controls: the battery, the Arduino Uno, the encoder on the drive motor, the wiring and soldering, and the programming, including the timing of the solenoids that fire the launcher. I also designed, laser cut, and assembled the chassis, and I modeled and 3D printed the catch funnel, whose size was capped by the rules. My teammates designed the launcher and the drivetrain and turned the axles on a lathe.
+I was responsible for the electronics and controls: the battery, the Arduino Uno, the L298N motor driver, the encoder on the drive motor, the wiring and soldering, and the programming, including the timing of the solenoids that fire the launcher. I also designed, laser cut, and assembled the chassis, and I modeled and 3D printed the catch funnel, whose size was capped by the rules. My teammates designed the launcher and the drivetrain and turned the axles on a lathe.
 
 ## Design
 
@@ -34,7 +34,7 @@ The chassis is a laser-cut truss frame that carries the launcher tube, the funne
 
 ### Electronics and Control
 
-An Arduino Uno runs the whole sequence. The encoder on the drive motor tracks how far the rover has traveled, which sets both stopping points. It also triggers the launch: the rover fires while moving, so the Arduino fires the solenoids once the encoder distance reaches a calculated offset from the hoop, timing the shot so the ball passes through it.
+An Arduino Uno runs the whole sequence and drives the motor through an L298N motor driver. The encoder on the drive motor tracks how far the rover has traveled, which sets both stopping points. It also triggers the launch: the rover fires while moving, so the Arduino fires the solenoids once the encoder distance reaches a calculated offset from the hoop, timing the shot so the ball passes through it.
 
 <img src="{{ '/Media/rover/electronics.jpg' | relative_url }}" alt="Underside of the rover showing the Arduino, wiring, encoder-equipped drive motor, and turned axle" width="80%"/>
 
@@ -43,7 +43,7 @@ An Arduino Uno runs the whole sequence. The encoder on the drive motor tracks ho
     <video controls muted playsinline preload="metadata" poster="{{ '/Media/rover/motor-test-poster.jpg' | relative_url }}" style="width: 100%;">
       <source src="{{ '/Media/rover/motor-test.mp4' | relative_url }}" type="video/mp4">
     </video>
-    <figcaption style="text-align: center; font-size: 0.9em;">First test: motor driver and Arduino</figcaption>
+    <figcaption style="text-align: center; font-size: 0.9em;">First test: L298N motor driver and Arduino</figcaption>
   </figure>
   <figure style="margin: 0; flex: 1 1 240px; max-width: 320px;">
     <video controls muted playsinline preload="metadata" poster="{{ '/Media/rover/drive-test-poster.jpg' | relative_url }}" style="width: 100%;">
