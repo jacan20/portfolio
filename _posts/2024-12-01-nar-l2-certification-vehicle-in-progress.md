@@ -5,14 +5,16 @@ date: 2024-12-01
 categories: [Personal Project]
 ---
 
-This is my high-power rocket for the Level 2 certification flight. It's built and waiting to fly.
+This is my high-power rocket for the Level 2 certification flight. It's built, with the written exam and certification flight still ahead.
+
+<img src="{{ '/Media/L2/full-vehicle.jpg' | relative_url }}" alt="Completed L2 rocket on a display stand" width="100%"/>
 
 ## Vehicle Overview
 
 - **Airframe:** 4-inch phenolic tube
-- **Nosecone:** 3D printed
+- **Nosecone:** 3D-printed PLA
 - **Fin can and motor mount:** a single 3D-printed polycarbonate part
-- **Motor:** J270, for a planned apogee of about 2,500 ft
+- **Motor:** AeroTech J270W, for a planned apogee of about 2,500 ft
 - **Recovery:** dual deploy, with two Altus Metrum EasyMini altimeters for redundancy
 
 ## 3D-Printed Fin Can
@@ -27,4 +29,4 @@ The rocket uses dual deployment: a small drogue parachute deploys at apogee to b
 
 ## Status
 
-The vehicle is complete and ready for its certification flight. I'll update this page with flight results.
+The vehicle is built. Next are the written exam and the certification flight, and I'll update this page with flight results.
