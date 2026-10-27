@@ -40,8 +40,7 @@ Competitions: NASA Student Launch, Argonia Cup, and Spaceport America Cup (IREC)
 
 - **Applied Mechatronics (MECH 5840):**
   - 3D-printed 12V brushed DC motor (fastest in the class)
-  - Analog inverted pendulum controller
-  - Digital inverted pendulum controller
+  - Inverted pendulum PD control, analog (op-amp) and digital (Arduino)
   - Foosball Defender arcade game
 - **Principles of Navigation and Guidance:**
   - Comparison of inertial navigation, GPS, and vehicle-dynamics simulation for a double lane change maneuver in MATLAB
