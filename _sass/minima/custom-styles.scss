@@ -118,3 +118,11 @@
     margin-bottom: 1rem;
   }
 }
+/* Long display equations scroll within their own box on narrow screens
+   instead of widening the page (MathJax 3 doesn't line-wrap) */
+mjx-container[display="true"] {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
