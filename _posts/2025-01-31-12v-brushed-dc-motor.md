@@ -9,7 +9,7 @@ categories: [Academic Project]
 
 The motor frame and rotor are entirely 3D printed in PLA. The shaft is a 5&nbsp;mm aluminum rod supported by a bearing on each side, and the rotor is superglued to the shaft so the two can't slip as the motor spins.
 
-The rotor carries six coils, each wound with 50 turns of 24&nbsp;AWG enameled copper wire. We chose that gauge to carry up to 2&nbsp;A. The coils are wound in a distributed configuration to improve efficiency.
+The rotor carries six coils, each wound with 50 turns of 24&nbsp;AWG enameled copper wire. We chose that gauge to carry up to 2&nbsp;A. The coils are wound in a distributed configuration, overlapping one another so they sit tighter against the rotor. Keeping the winding mass close to the axis lowers the rotor's moment of inertia, so it spins up faster. Smoother torque is a side benefit.
 
 The commutator and brushes are made from copper tape. Each coil is soldered to its own copper tape segment on the rotor shaft. Copper tape brushes press against these segments, each held by a spring bearing against an M2 bolt and nut. The bolts also serve as connection points for alligator clips, and adjusting the springs sets the brush contact force, trading electrical contact against friction on the rotor.
 

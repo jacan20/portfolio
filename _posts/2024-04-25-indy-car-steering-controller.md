@@ -7,7 +7,7 @@ categories: [Academic Project]
 
 ## Introduction
 
-For the final group project in System Dynamics and Controls, my team of four designed a steering controller for an autonomous Indy Lights race car (Dallara IL-15, the chassis behind the Indy Autonomous Challenge's AV-21). The project was done entirely in MATLAB. A password-protected MATLAB function, `run_indy_car.p`, served as the simulated vehicle. A DC motor on the steering column turns the front wheels, and the voltage to that motor is the system's input. The goal was a controller that drives the car around a racetrack while meeting strict performance requirements.
+For the final group project in System Dynamics and Controls, my team of four designed a steering controller for an autonomous Indy-style race car. The project was done entirely in MATLAB. A password-protected MATLAB function, `run_indy_car.p`, served as the simulated vehicle. A DC motor on the steering column turns the front wheels, and the voltage to that motor is the system's input. The goal was a controller that drives the car around a racetrack while meeting strict performance requirements.
 
 Much of the detailed work is omitted here for academic honesty reasons, since versions of this project are assigned every semester.
 
