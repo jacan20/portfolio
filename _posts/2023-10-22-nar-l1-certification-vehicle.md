@@ -37,5 +37,12 @@ The payload was a GPS tracking system I built from two Heltec LoRa boards, and I
 
 ## Second Life: Flying Larvae for Research
 
-After my certification flight, I donated the rocket to an AURA group working on a project with Auburn's Department of Entomology and Plant Pathology. The project studied whether black soldier fly larvae could turn Martian soil into soil that can grow food, as part of research on food production for future Mars missions. The rocket flew live larvae to test whether they could survive the loads of a real launch, and they did.
+After my certification flight, I donated the rocket to an AURA group working on a project with Auburn's Department of Entomology and Plant Pathology. The project studied whether black soldier fly larvae could turn Martian soil into soil that can grow food, as part of research on food production for future Mars missions. The rocket flew live larvae in a 3D-printed payload module to test whether they could survive the loads of a real launch, alongside centrifuge tests at 10–40 G. Altimeter data from that flight:
+
+- **Apogee:** 1,919 ft (585 m)
+- **Peak speed:** 408 ft/s (Mach 0.4)
+- **Peak boost acceleration:** 6.7 G, over a 1.9 s burn
+- **Total flight time:** 36 seconds
+
+All of the larvae were recovered alive and were still alive a week later.
 
