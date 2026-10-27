@@ -9,9 +9,9 @@ James W. Cannon is a mechanical and space systems engineer. He holds a Bachelor 
 ## Featured
 
 - [New graduate certificate strengthens Auburn's space legacy](https://wire.auburn.edu/content/ocm/2025/10/200931-space-systems-grad-certificate.php), Auburn University News, October 2025. Named among the first students to enroll in Auburn's Space Systems graduate certificate.
-- [Auburn rocketry club brings hands-on fun to young patients at Children's of Alabama](https://eng.auburn.edu/news/2025/04/aura-2025), Auburn Engineering, April 2025. AURA outreach visit.
+- [Auburn rocketry club brings hands-on fun to young patients at Children's of Alabama](https://eng.auburn.edu/news/2025/04/aura-2025), Auburn Engineering, April 2025. One of four AURA members on the outreach visit.
 - [The Auburn University Rocketry Association prepares competition rocket for success](https://eng.auburn.edu/news/2025/02/aura-feature), Auburn Engineering, February 2025. Quoted as AURA Chief Engineer.
-- [Auburn's rocketry team paints vision "For Brighter Futures" in visit to Children's of Alabama](https://ocm.auburn.edu/newsroom/news_articles/2023/02/271025-auburn-rocketry-team.php), Auburn University News, February 2023. AURA outreach visit.
+- [Auburn's rocketry team paints vision "For Brighter Futures" in visit to Children's of Alabama](https://ocm.auburn.edu/newsroom/news_articles/2023/02/271025-auburn-rocketry-team.php), Auburn University News, February 2023. One of four AURA members on the outreach visit.
 
 ## Education
 
