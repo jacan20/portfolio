@@ -28,13 +28,13 @@ I was responsible for the electronics and controls: the battery, the Arduino Uno
 
 ### Chassis
 
-The chassis is a laser-cut truss frame that carries the launcher tube, the funnel, the electronics, and the drivetrain.
+The chassis is a laser-cut truss frame that carries the launcher tube, the funnel, the electronics, and the drivetrain. The truss cutouts keep the electronics inside visible.
 
 <img src="{{ '/Media/rover/chassis.jpg' | relative_url }}" alt="Side view of the laser-cut truss chassis with the launcher column mounted on top" width="60%"/>
 
 ### Electronics and Control
 
-An Arduino Uno runs the whole sequence. The encoder on the drive motor tracks how far the rover has traveled, so it stops at the right points. Because the rover launches while moving, the solenoids also have to fire at the right moment for the ball to pass through the hoop.
+An Arduino Uno runs the whole sequence. The encoder on the drive motor tracks how far the rover has traveled, which sets both stopping points. It also triggers the launch: the rover fires while moving, so the Arduino fires the solenoids once the encoder distance reaches a calculated offset from the hoop, timing the shot so the ball passes through it.
 
 <img src="{{ '/Media/rover/electronics.jpg' | relative_url }}" alt="Underside of the rover showing the Arduino, wiring, encoder-equipped drive motor, and turned axle" width="80%"/>
 
@@ -61,7 +61,7 @@ The launcher is spring-powered with an adjustable launch angle. Solenoids releas
 
 ### Catch Funnel
 
-The rules allowed a funnel above the supplied cup, up to a maximum size. I modeled and printed it to catch the falling ball and guide it into the cup.
+The rules allowed a funnel above the supplied cup, up to a maximum size. I modeled and printed one at that maximum to give the falling ball the largest possible target and guide it into the cup.
 
 ## Results and Lessons Learned
 
