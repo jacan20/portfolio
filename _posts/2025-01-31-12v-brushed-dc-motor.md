@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "MECH 5840 - 3D-Printed DC Motor with Distributed Coils"
+title: "3D-Printed DC Motor with Distributed Coils (MECH 5840)"
 date: 2025-1-31
 categories: [Academic Project]
+redirect_from:
+  - "/academic project/2025/01/31/12v-brushed-dc-motor.html"
 ---
 
 ### Motor Design

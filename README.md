@@ -40,6 +40,10 @@ Write-up goes here. Inline math: $x^2$, display math: $$ \pi \approx 3.14 $$
 Put images in `Media/<project>/`. The `categories` value decides which column and list page
 the post appears in.
 
+Project pages are served at `/projects/<name>/`, where `<name>` comes from the filename (or a
+`slug:` in the front matter). If you ever rename a post, add its old URL under `redirect_from:`
+so existing links keep working.
+
 ## Local preview
 
 Requires Ruby and Bundler.
@@ -54,7 +58,8 @@ image paths used in posts.
 
 ## Deployment
 
-GitHub Pages builds and serves the site automatically from the `gh-pages` branch.
+Every push to `gh-pages` runs `.github/workflows/jekyll.yml`, which builds the site with the
+Gemfile's Jekyll version and deploys it to GitHub Pages.
 
 ## License
 

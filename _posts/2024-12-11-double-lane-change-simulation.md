@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "MECH 6970 - Double Lane Change INS/GPS/Simulation Analysis"
+title: "Double Lane Change INS/GPS/Simulation Analysis (MECH 6970)"
 date: 2024-12-11
 categories: [Academic Project]
 use_math: true
+redirect_from:
+  - "/academic project/2024/12/11/double-lane-change-simulation.html"
 ---
 
 In December 2024, a team of three of us benchmarked vehicle navigation methods for a class project. We compared GPS-based navigation, INS dead reckoning, and a bicycle-model simulation similar to the p-code vehicle model from my MECH 3140 project.
@@ -27,9 +29,6 @@ We compared two ways to initialize the INS orientation:
 
 1. **GPS heading:** A fixed heading referenced to north set the IMU's initial orientation.
 2. **Initial motion:** The direction of the vehicle's initial motion defined the rotation matrix aligning the IMU with the navigation frame.
-
-<br>
-<img src="/portfolio/Media/navproject/kiasoul.jpg" alt="2012 Kia Optima, the test vehicle model" style="max-width: 100%;"/>
 
 ### IMU Data Processing
 

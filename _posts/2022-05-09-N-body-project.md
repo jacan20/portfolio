@@ -3,6 +3,9 @@ layout: post
 title: "N-Body Newtonian Gravitation Simulation"
 date: 2022-05-09
 categories: [Personal Project]
+slug: n-body-gravity-simulation
+redirect_from:
+  - "/personal project/2022/05/09/N-body-project.html"
 ---
 
 I first wrote this N-body gravity simulation in high school, out of an interest in both physics and programming. I later came back to it and reworked the code and the numerical methods to make it more stable and accurate.

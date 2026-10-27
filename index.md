@@ -7,3 +7,7 @@
 #
 layout: home
 ---
+
+Mechanical and space systems engineer with project work in spacecraft thermal control, high-power
+rocketry hardware, mechatronics, and controls. Below are selected academic and personal projects.
+[More about me &rarr;]({{ '/about/' | relative_url }})

@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "MECH 3200 - Autonomous Golf Ball Launching/Catching Rover"
+title: "Autonomous Golf Ball Launching/Catching Rover (MECH 3200)"
 date: 2024-11-01
 categories: [Academic Project]
+redirect_from:
+  - "/academic project/2024/11/01/autonomous-golf-ball-rover.html"
 ---
 
 For the final project in Concepts of Mechanical Design, my team of five built an autonomous rover that drives a set distance, launches a golf ball through an overhead hoop while moving, catches it in a cup, and parks in a target box.
