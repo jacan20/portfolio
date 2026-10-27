@@ -34,3 +34,8 @@ The payload was a GPS tracking system I built from two Heltec LoRa boards, and I
 </div>
 
 *Coordinates on the screens are blurred.*
+
+## Second Life: Flying Larvae for Research
+
+After my certification flight, I donated the rocket to an AURA group working on a project with Auburn's Department of Entomology and Plant Pathology. The project studied whether black soldier fly larvae could turn Martian soil into soil that can grow food, as part of research on food production for future Mars missions. The rocket flew live larvae to test whether they could survive the loads of a real launch, and they did.
+
