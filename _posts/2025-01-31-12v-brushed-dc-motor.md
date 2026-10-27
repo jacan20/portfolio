@@ -1,19 +1,19 @@
 ---
 layout: post
-title: "MECH 5480 - 3D-Printed DC Motor with Distributed Coils"
+title: "MECH 5840 - 3D-Printed DC Motor with Distributed Coils"
 date: 2025-1-31
 categories: [Academic Project]
 ---
 
-### Motor Description
+### Motor Design
 
-We designed our motor primarily using PLA plastic and 3D-printed models. The motor frame and rotor are entirely 3D printed, while the motor shaft is a 5&nbsp;mm aluminum rod supported by bearings on each side. We formed the commutators and brushes using copper tape.
+The motor frame and rotor are entirely 3D printed in PLA. The shaft is a 5&nbsp;mm aluminum rod supported by a bearing on each side, and the rotor is superglued to the shaft so the two can't slip as the motor spins.
 
-This motor features six coils, each consisting of 50 turns of 24&nbsp;AWG enameled copper wire. The wire gauge was selected to handle up to 2&nbsp;A of current, and the coils are wrapped in a distributed coil style to improve efficiency. Each coil is soldered to a separate copper tape strip, which serves as a commutator on the rotor shaft. The rotor is superglued to the aluminum rod to eliminate any slip between the two as the motor spins.
+The rotor carries six coils, each wound with 50 turns of 24&nbsp;AWG enameled copper wire. We chose that gauge to carry up to 2&nbsp;A. The coils are wound in a distributed configuration, overlapping one another so they sit tighter against the rotor. Keeping the winding mass close to the axis lowers the rotor's moment of inertia, so it spins up faster. Smoother torque is a side benefit.
 
-To provide electrical contact, copper tape brushes press against the commutators. A spring applies tension on each brush by bearing against an M2 bolt and nut. These bolts also serve as convenient connection points for alligator clips. By adjusting the spring, we can modulate the contact force to reduce friction on the rotor.
+The commutator and brushes are made from copper tape. Each coil is soldered to its own copper tape segment on the rotor shaft. Copper tape brushes press against these segments, each held by a spring bearing against an M2 bolt and nut. The bolts also serve as connection points for alligator clips, and adjusting the springs sets the brush contact force, trading electrical contact against friction on the rotor.
 
-Our custom motor stand is designed with slots for magnets on both sides of the coils, with one side including a cover to help keep the magnets separate during removal. This layout allows for easy adjustments and replacement of components while ensuring the magnets stay securely in place.
+The motor stand has slots for magnets on both sides of the coils. One side has a cover that keeps the magnets separated when they're removed, so components can be adjusted or replaced while the magnets stay secure.
 
 ---
 
@@ -32,4 +32,4 @@ Our custom motor stand is designed with slots for magnets on both sides of the c
 
 ### Performance
 
-We achieved a **maximum measured speed of over 4000&nbsp;RPM** during testing—quite impressive for a fully 3D-printed motor!
+The motor reached a **maximum measured speed of over 4,000&nbsp;RPM**, the fastest in the class, despite being almost entirely 3D printed.
