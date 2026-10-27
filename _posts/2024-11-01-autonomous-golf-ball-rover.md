@@ -38,6 +38,21 @@ An Arduino Uno runs the whole sequence. The encoder on the drive motor tracks ho
 
 <img src="{{ '/Media/rover/electronics.jpg' | relative_url }}" alt="Underside of the rover showing the Arduino, wiring, encoder-equipped drive motor, and turned axle" width="80%"/>
 
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+  <figure style="margin: 0; flex: 1 1 240px; max-width: 320px;">
+    <video controls muted playsinline preload="metadata" poster="{{ '/Media/rover/motor-test-poster.jpg' | relative_url }}" style="width: 100%;">
+      <source src="{{ '/Media/rover/motor-test.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <figcaption style="text-align: center; font-size: 0.9em;">First test: motor driver and Arduino</figcaption>
+  </figure>
+  <figure style="margin: 0; flex: 1 1 240px; max-width: 320px;">
+    <video controls muted playsinline preload="metadata" poster="{{ '/Media/rover/drive-test-poster.jpg' | relative_url }}" style="width: 100%;">
+      <source src="{{ '/Media/rover/drive-test.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <figcaption style="text-align: center; font-size: 0.9em;">Development test: autonomous drive</figcaption>
+  </figure>
+</div>
+
 ### Launcher
 
 My teammates led the launcher design; my part was the solenoid trigger and its timing, plus some work on the launcher CAD. The launcher is spring-powered with an adjustable launch angle, and solenoids release the trigger to fire it. In an early version the solenoids pushed directly on the release, putting axial load on their plungers, which solenoids don't tolerate well. The team revised the design so the solenoids rotate a dial that trips the release instead.
@@ -50,12 +65,6 @@ My teammates led the launcher design; my part was the solenoid trigger and its t
       <source src="{{ '/Media/rover/launcher-test.mp4' | relative_url }}" type="video/mp4">
     </video>
     <figcaption style="text-align: center; font-size: 0.9em;">Development test: launcher firing</figcaption>
-  </figure>
-  <figure style="margin: 0; flex: 1 1 240px; max-width: 320px;">
-    <video controls muted playsinline preload="metadata" poster="{{ '/Media/rover/drive-test-poster.jpg' | relative_url }}" style="width: 100%;">
-      <source src="{{ '/Media/rover/drive-test.mp4' | relative_url }}" type="video/mp4">
-    </video>
-    <figcaption style="text-align: center; font-size: 0.9em;">Development test: autonomous drive</figcaption>
   </figure>
 </div>
 
