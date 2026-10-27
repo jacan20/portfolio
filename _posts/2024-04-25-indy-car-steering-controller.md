@@ -22,17 +22,17 @@ The assignment document outlines several key objectives and requirements:
 2. **Controller Design:**
    - **Feedback Control System:**  
      Develop a feedback control system that computes the desired voltage to control the vehicle’s heading (yaw) or lateral position. A cascaded PD controller is implemented where:
-       - The **outer loop** converts the voltage command into a tire angle reference.
-       - The **inner loop** maps the tire angle reference to the vehicle’s actual response.
+       - The **inner loop** drives the steering motor voltage so the front tire angle tracks a tire angle reference.
+       - The **outer loop** generates that tire angle reference from the vehicle’s yaw (heading) error.
      *Note: The voltage-to-tire angle model is omitted for brevity.*
    - **Performance Targets:**  
      The controller must track a constant desired reference with zero steady-state error. Key performance metrics include a settling time of less than 0.6 seconds and a maximum overshoot of less than 5% at speeds around 15 m/s.
 
 3. **Validation and Testing:**
-   - **Simulation and Real-World Testing:**  
+   - **Simulation Testing:**  
      Validate the developed model against the `run_Indy_car.p` simulation, ensuring that both the system identification and control system meet the expected performance across various speeds (including speeds >60 m/s).
 
-This project not only reinforces our understanding of vehicle dynamics and control theory but also challenges us to integrate modeling, simulation, and real-world validation into a cohesive system for autonomous vehicle control. Much of the work for this project is omitted, for academic honesty reasons, as versions of this project are given to students every semester.
+This project not only reinforces our understanding of vehicle dynamics and control theory but also challenges us to integrate modeling, controller design, and simulation-based validation into a cohesive system for autonomous vehicle control. Much of the work for this project is omitted, for academic honesty reasons, as versions of this project are given to students every semester.
 
 ## System Modeling & Vehicle Dynamics
 
@@ -82,37 +82,37 @@ Here:
 #### Cascaded PD Controller
 
 Our control strategy employed a **cascaded PD controller** with two loops:
-- **Outer Loop:** Controls an input voltage on a motor on the steering column to front tire angle.
-- **Inner Loop:** Maps tire angle to the vehicle yaw angle response.
+- **Inner Loop:** Controls the input voltage to the motor on the steering column so the front tire angle tracks its reference.
+- **Outer Loop:** Commands the tire angle reference that steers the vehicle’s yaw angle toward the desired heading.
 
-The following figure is the root locus used for pole-zero placement (controller gain selection) for the inner loop controller. This root locus was generated for a vehicle at 108 m/s.
+The following figure is the root locus used for pole-zero placement (controller gain selection) for the outer (yaw) loop controller. This root locus was generated for a vehicle at 108 m/s.
 
-<img src="{{ '/Media/IndyCar/108RootLocus.jpg' | relative_url }}" alt="108 root locus for inner controller" width="60%"/>
+<img src="{{ '/Media/IndyCar/108RootLocus.jpg' | relative_url }}" alt="Root locus for the outer (yaw) loop controller at 108 m/s" width="60%"/>
 
 
-*Note: The voltage-to-tire angle model is omitted for brevity.*
+*Note: The voltage-to-tire angle (inner loop) model is omitted for brevity.*
 
 ### Simulation and Verification
 
-One of the most thrilling parts of the project was the validation phase. We tested the steering control system on an Indy 500 track simulation, achieving a remarkable top speed of **108 m/s**. This was the highest speed our controller was stable; it was also stable at lower speeds. it The high-speed tests are documented with several key figures:
+One of the most thrilling parts of the project was the validation phase. We tested the steering control system on an Indy 500 track simulation, achieving a top speed of **108 m/s (~242 mph)**, the fastest stable controller in the class. This was the highest speed at which our controller was stable; it was also stable at lower speeds. The high-speed tests are documented with several key figures:
 
 - **Steering Column Motor Voltage Input:**
-  Here is the input voltage the to the motor on the steering column. We are not modeling the dynamics of a motor driver here. The system dynamics include that of the DC motor, and the gearboxes, etc that allow the motor to move the wheels. 
+  Here is the input voltage to the motor on the steering column. We are not modeling the dynamics of a motor driver here. The system dynamics include that of the DC motor, and the gearboxes, etc that allow the motor to move the wheels. 
   <img src="{{ '/Media/IndyCar/voltage.png' | relative_url }}" alt="108 m/s Steering Motor Input" width="60%"/>
 
   This figure captures the voltage profile applied to the motor at 108 m/s, demonstrating the input dynamics of the system. This shows an area for improvement, as the voltage rapidly cycles between its maximum and minimum values. However, the controller is able to control the vehicle, despite the +/- 24V operational limit of the motor on the steering column.
   
 - **Tire Angle Input/output:** 
-  Here is the tire angle input to the inner control loop. You can see both the desired tire angle, and the actual tire angle the outer loop is able to deliver.
+  Here is the tire angle input to the inner control loop. You can see both the desired tire angle and the actual tire angle the inner loop is able to deliver.
 
   <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="60%"/>
 
-  This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions. This was the output of the outer control loop, and the input to the inner control loop
+  This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions. This was the output of the outer control loop, and the input to the inner control loop.
 
 - **Simulated Vehicle Lap:**
-  Finally, putting every thing together, and running the the controller on the password protected p-code Indy Car model, we can see the indy car completeing laps at the Indianapolis Motor Speedway. The vehicle just barely stays in the lanes on the turns; any faster and our turning radius is larger than the track (and given GPS waypoints) can support.
+  Finally, putting everything together and running the controller on the password-protected p-code Indy car model, we can see the Indy car completing laps at the Indianapolis Motor Speedway. The vehicle just barely stays in the lanes on the turns; any faster and our turning radius is larger than the track (and given GPS waypoints) can support.
 
-    <img src="{{ '/Media/IndyCar/indycar108track.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="60%"/>
+    <img src="{{ '/Media/IndyCar/indycar108track.png' | relative_url }}" alt="Simulated lap at 108 m/s on the Indianapolis Motor Speedway" width="60%"/>
 
 
 
@@ -131,6 +131,6 @@ This project was a tremendous learning experience:
 
 ## Conclusion
 
-Our autonomous steering control project not only provided hands-on experience with advanced control techniques but also demonstrated the potential for applying classical system dynamics to modern, high-speed applications. The blend of theory, simulation, and real-world validation has given us a robust foundation to push the boundaries of autonomous vehicle technology.
+Our autonomous steering control project not only provided hands-on experience with advanced control techniques but also demonstrated the potential for applying classical system dynamics to modern, high-speed applications. The blend of theory, controller design, and simulation-based validation has given us a robust foundation to push the boundaries of autonomous vehicle technology.
 
 For a detailed walkthrough of our methodology, challenges, and results, please refer to our final presentation and accompanying figures.

@@ -6,8 +6,6 @@ categories: [Academic Project]
 use_math: true
 ---
 
-[Higher resolution figures coming soon (tm). These were copied from the final presentation.]
-
 In December 2024, I worked with a team of three on a class project aimed at benchmarking vehicle navigation techniques. Our objective was to compare traditional GPS-based navigation with INS dead reckoning and a bicycle-model simulation, similar to the pcode from my MECH 3140 project.
 
 ## Project Overview
@@ -34,7 +32,7 @@ We used two methods to initialize the navigation systems:
    The vehicle’s initial motion defined a rotation matrix, aligning the IMU’s orientation with the desired navigation frame.
 
 <br>
-<img src="/portfolio/Media/navproject/kiasoul.jpg" alt="Instrumented Kia" style="max-width: 100%;"/>
+<img src="/portfolio/Media/navproject/kiasoul.jpg" alt="2012 Kia Optima, the test vehicle model" style="max-width: 100%;"/>
 
 ### IMU Data Processing
 
@@ -89,6 +87,12 @@ $$
 
 We fed speedometer velocities and measured steering angles into a simplified bicycle model. This model computes lateral and yaw responses of the vehicle.
 
+$$
+\dot{x} \;=\; v\cos\psi, \qquad
+\dot{y} \;=\; v\sin\psi, \qquad
+\dot{\psi} \;=\; \frac{v}{L}\tan\delta
+$$
+
 where \\((x, y)\\) is the vehicle’s position in the plane, \\(\psi\\) is the heading, \\(v\\) is the longitudinal velocity, \\(L\\) is the wheelbase, and \\(\delta\\) is the steering angle.
 
 <br>
@@ -115,7 +119,7 @@ As shown above, the model-based path remains closest to the ground truth.
 
 ## Conclusion
 
-Reflecting on this project, I recognize it was relatively straightforward; however, it was my first time developing a complete 6 DOF IMU mechanization, bias correction, and initialization scheme from scratch. It also highlighted how significantly filtering can improve IMU data quality. Ultimately, this was a valuable learning experience in the benefits of multiple navigation solution methodologies.  [Now, if only there were a way to that could elegantly fuse these data streams into a single, more accurate navigation solution!](https://en.wikipedia.org/wiki/Kalman_filter) 
+Reflecting on this project, I recognize it was relatively straightforward; however, it was my first time developing a complete 6 DOF IMU mechanization, bias correction, and initialization scheme from scratch. It also highlighted how significantly filtering can improve IMU data quality. Ultimately, this was a valuable learning experience in the benefits of multiple navigation solution methodologies.  [Now, if only there were a way that could elegantly fuse these data streams into a single, more accurate navigation solution!](https://en.wikipedia.org/wiki/Kalman_filter) 
 
 
 

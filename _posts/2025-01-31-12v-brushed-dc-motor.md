@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MECH 5480 - 3D-Printed DC Motor with Distributed Coils"
+title: "MECH 5840 - 3D-Printed DC Motor with Distributed Coils"
 date: 2025-1-31
 categories: [Academic Project]
 ---
@@ -32,4 +32,4 @@ Our custom motor stand is designed with slots for magnets on both sides of the c
 
 ### Performance
 
-We achieved a **maximum measured speed of over 4000&nbsp;RPM** during testing—quite impressive for a fully 3D-printed motor!
+We achieved a **maximum measured speed of over 4000&nbsp;RPM** during testing, the fastest motor in the class. That's quite impressive for a fully 3D-printed motor!
