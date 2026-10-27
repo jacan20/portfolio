@@ -10,7 +10,7 @@ James W. Cannon is a mechanical and space systems engineer. He holds a Bachelor 
 
 **Auburn University**
 - Bachelor of Mechanical Engineering, May 2025. Summa Cum Laude, University Honors Scholar, GPA 3.84.
-- Space Systems Graduate Certificate, Aug 2026, GPA 4.00. The design project was an EOIR Earth-observation constellation for vegetation growth monitoring, covering orbital placement, optics, communications, power, and data handling.
+- Space Systems Graduate Certificate, Aug 2026, GPA 4.00. The design project was [C-WAVE]({{ '/projects/c-wave-constellation-design/' | relative_url }}), an EOIR Earth-observation constellation for vegetation growth monitoring, covering orbital placement, optics, communications, power, and data handling.
 
 ## Spacecraft Thermal Control: Alabama CubeSat Initiative
 
