@@ -4,19 +4,7 @@ title: About
 permalink: /about/
 ---
 
-James W. Cannon is a Systems Engineer at The MITRE Corporation in Huntsville, AL, where he supports the Missile Defense Agency (Sensors and C4ISR) and the U.S. Space Force. He holds a Bachelor of Mechanical Engineering and a Space Systems Graduate Certificate from Auburn University. His project work spans spacecraft thermal control, high-power rocketry hardware, CAD, and controls.
-
-## Experience
-
-**Systems Engineer (Intermediate), The MITRE Corporation** (July 2025–present)
-- Develops algorithms and performs mission planning analysis for Space Domain Awareness applications.
-- Analyzes current and future space-based capabilities in Systems Tool Kit (STK) with MATLAB integration, and briefs results to leadership and government sponsors.
-
-**Intern, MITRE, MDA Weapons Systems** (May–Aug 2024)
-- Built a genetic-algorithm approach in MATLAB for interceptor trajectory planning that accounts for radiation survivability and debris sensor effects.
-
-**Intern, MITRE, MDA Sensors and C4ISR** (May–Aug 2023)
-- Simulated monostatic pulsed radar in Python to quantify the gains of ultrawideband radar over X-band and dual-band.
+James W. Cannon is a mechanical and space systems engineer. He holds a Bachelor of Mechanical Engineering (Summa Cum Laude) and a Space Systems Graduate Certificate from Auburn University. His project work spans spacecraft thermal control, high-power rocketry hardware, CAD, and controls.
 
 ## Education
 
