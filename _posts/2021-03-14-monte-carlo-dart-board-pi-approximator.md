@@ -3,6 +3,8 @@ layout: post
 title: "Monte Carlo Dart Board Pi Approximator"
 date: 2021-03-14
 categories: [Personal Project]
+redirect_from:
+  - "/personal project/2021/03/14/monte-carlo-dart-board-pi-approximator.html"
 ---
 This project estimates π with a Monte Carlo simulation, an idea I first built in high school. Random points ("darts") are scattered uniformly over a square that encloses a circle. The fraction of darts landing inside the circle approaches the ratio of the two areas, π/4, so:
 

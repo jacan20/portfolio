@@ -1,8 +1,11 @@
 ---
 layout: post
-title: "MECH 5840 - Inverted Pendulum: Analog and Digital PD Control"
+title: "Inverted Pendulum: Analog and Digital PD Control (MECH 5840)"
 date: 2025-03-07
 categories: [Academic Project]
+slug: inverted-pendulum-pd-control
+redirect_from:
+  - "/academic project/2025/03/07/analog-inverted-pendulum-controller.html"
 ---
 
 In Applied Mechatronics, my team of four balanced an inverted pendulum twice: first with a PD controller built entirely from op-amps, then with the same control law discretized and run on an Arduino. I contributed to the circuit design and wrote the Arduino controller code.

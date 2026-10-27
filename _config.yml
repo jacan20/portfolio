@@ -16,6 +16,15 @@ future: true
 plugins:
 #  - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-redirect-from
+
+# Project pages live at /projects/<name>/. Old date-based URLs redirect via
+# each post's redirect_from.
+defaults:
+  - scope:
+      type: posts
+    values:
+      permalink: /projects/:title/
 
 minima:
   nav_pages:
@@ -34,4 +43,5 @@ minima:
       url: "https://www.linkedin.com/in/james-cannon-meche/"
     - title: Email
       icon: envelope
+      icon_style: fa-solid
       url: "mailto:jwc0081@auburn.edu"

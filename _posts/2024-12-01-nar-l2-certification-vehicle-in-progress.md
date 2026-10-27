@@ -3,6 +3,9 @@ layout: post
 title: "NAR/Tripoli L2 Certification Vehicle (In Progress)"
 date: 2024-12-01
 categories: [Personal Project]
+slug: nar-l2-certification-vehicle
+redirect_from:
+  - "/personal project/2024/12/01/nar-l2-certification-vehicle-in-progress.html"
 ---
 
 This is my high-power rocket for the Level 2 certification flight. It's built, with the written exam and certification flight still ahead.

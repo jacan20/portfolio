@@ -126,3 +126,25 @@ mjx-container[display="true"] {
   overflow-x: auto;
   overflow-y: hidden;
 }
+
+/* Header navigation links (right column) */
+.header-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+/* On phones, put the nav on its own row under the picture and title */
+@media (max-width: 600px) {
+  .header-top {
+    grid-template-columns: auto 1fr;
+  }
+  .header-right {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+  .about-link {
+    padding: 0.3rem 0.6rem;
+  }
+}
