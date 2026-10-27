@@ -5,7 +5,7 @@ date: 2025-03-07
 categories: [Academic Project]
 ---
 
-In Applied Mechatronics, my team of four balanced an inverted pendulum twice: first with a PD controller built entirely from op-amps, then with the same control law discretized and run on an Arduino. I designed the analog op-amp circuitry and wrote the Arduino controller code.
+In Applied Mechatronics, my team of four balanced an inverted pendulum twice: first with a PD controller built entirely from op-amps, then with the same control law discretized and run on an Arduino. I contributed to the circuit design and wrote the Arduino controller code.
 
 ## The System
 
