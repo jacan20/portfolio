@@ -27,7 +27,7 @@ James W. Cannon is a Systems Engineer at The MITRE Corporation in Huntsville, AL
 ## Spacecraft Thermal Control: Alabama CubeSat Initiative
 
 **Senior design, 12U SpaceTACSI thermal control and particle radiation** (Aug 2024–May 2025)
-- Was part of the team that built an isothermal, time-variant MATLAB thermal model of the 12U CubeSat payload bus, with exposure to Thermal Desktop and thermal FEA.
+- Helped build an isothermal, time-variant MATLAB thermal model of the 12U CubeSat payload bus, and gained exposure to Thermal Desktop and thermal FEA.
 - Evaluated passive and active thermal control across orbital environments.
 - Selected heater elements and optical tapes (absorptivity and emissivity) for the bus.
 - Derived subsystem thermal requirements from mission objectives and maintained traceability.
@@ -38,7 +38,7 @@ James W. Cannon is a Systems Engineer at The MITRE Corporation in Huntsville, AL
 Competitions: NASA Student Launch, Argonia Cup, and Spaceport America Cup (IREC).
 
 **Chief Engineer** (May 2023–May 2025)
-- Led vehicle integration. Notable systems included a drone that deployed from the rocket under parachute and landed autonomously, an air-brake system targeting a set apogee, and autonomous staging and recovery.
+- Led vehicle integration across the club's competition rockets. Notable systems included a drone that deployed from the rocket under parachute and landed autonomously, an air-brake system targeting a set apogee, and autonomous staging and recovery.
 - One vehicle reached 14,000 ft AGL, a school record.
 - Designed structural and recovery parts in SolidWorks, reviewed drawings for GD&T, and wrote launch checklists and countdown timelines.
 

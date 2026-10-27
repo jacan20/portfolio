@@ -7,130 +7,94 @@ categories: [Academic Project]
 
 ## Introduction
 
-In this final group project for System Dynamics and Controls, our team of four set out to develop a steering control system for the autonomous IndyLight race car (a Dallara IL-15 used in the Indy Autonomous Challenge). The project is done entirely in MATLAB, with a password protected MATLAB function (run_indy_car.p) serving as the simulated model of the vehicle. The setup involves a DC motor on the steering column, with the voltage to that motor being the input to the system. The project's primary goal is to design a robust controller that enables the vehicle to navigate a racetrack efficiently while meeting stringent performance criteria.
+For the final group project in System Dynamics and Controls, my team of four designed a steering controller for an autonomous Indy Lights race car (Dallara IL-15, the chassis behind the Indy Autonomous Challenge's AV-21). The project was done entirely in MATLAB. A password-protected MATLAB function, `run_indy_car.p`, served as the simulated vehicle. A DC motor on the steering column turns the front wheels, and the voltage to that motor is the system's input. The goal was a controller that drives the car around a racetrack while meeting strict performance requirements.
 
-## Project Objectives and Requirements
+Much of the detailed work is omitted here for academic honesty reasons, since versions of this project are assigned every semester.
 
-The assignment document outlines several key objectives and requirements:
+## Objectives and Requirements
 
-1. **Dynamic Modeling and System Identification:**
-   - **Model Development:**  
-     Derive the system dynamics by summing forces in the lateral direction and moments about the vehicle's center of gravity. This involves formulating the equations of motion for both lateral and yaw dynamics.
-   - **Transfer Function Creation:**  
-     Combine the derived equations to develop a transfer function with the steering input (voltage command, through the steering mechanism) as the input and the yaw rate as the output.
+1. **Dynamic modeling and system identification**
+   - Derive the equations of motion by summing lateral forces and yaw moments about the vehicle's center of gravity.
+   - Combine them into a transfer function from the steering input to the vehicle's yaw rate.
 
-2. **Controller Design:**
-   - **Feedback Control System:**  
-     Develop a feedback control system that computes the desired voltage to control the vehicle’s heading (yaw) or lateral position. A cascaded PD controller is implemented where:
-       - The **inner loop** drives the steering motor voltage so the front tire angle tracks a tire angle reference.
-       - The **outer loop** generates that tire angle reference from the vehicle’s yaw (heading) error.
-     *Note: The voltage-to-tire angle model is omitted for brevity.*
-   - **Performance Targets:**  
-     The controller must track a constant desired reference with zero steady-state error. Key performance metrics include a settling time of less than 0.6 seconds and a maximum overshoot of less than 5% at speeds around 15 m/s.
+2. **Controller design**
+   - Design a feedback controller that computes the steering motor voltage needed to control the vehicle's heading (yaw) or lateral position. We used a cascaded PD controller:
+     - The **inner loop** drives the steering motor voltage so the front tire angle tracks a tire angle reference.
+     - The **outer loop** generates that tire angle reference from the vehicle's yaw (heading) error.
+   - Track a constant reference with zero steady-state error, with a settling time under 0.6 s and overshoot under 5% at about 15 m/s.
 
-3. **Validation and Testing:**
-   - **Simulation Testing:**  
-     Validate the developed model against the `run_Indy_car.p` simulation, ensuring that both the system identification and control system meet the expected performance across various speeds (including speeds >60 m/s).
+3. **Simulation testing**
+   - Validate the model and controller against the `run_indy_car.p` simulation across a range of speeds, including speeds above 60 m/s.
 
-This project not only reinforces our understanding of vehicle dynamics and control theory but also challenges us to integrate modeling, controller design, and simulation-based validation into a cohesive system for autonomous vehicle control. Much of the work for this project is omitted, for academic honesty reasons, as versions of this project are given to students every semester.
+## System Modeling
 
-## System Modeling & Vehicle Dynamics
+### The Bicycle Model
 
-### The Bicycle Vehicle Dynamics Model
+The bicycle model is a standard simplification for vehicle lateral dynamics. It lumps the left and right wheels into a single front wheel and a single rear wheel. That keeps the two motions that matter for steering control while greatly reducing complexity:
 
-The bicycle model is a widely used simplification in vehicle dynamics that represents a car with two wheels—one at the front and one at the rear. This model captures the essential lateral and yaw dynamics, making it a powerful tool for designing and analyzing steering control systems.
+- **Lateral motion:** how the vehicle's sideslip responds to the lateral forces the tires generate when steered.
+- **Yaw motion:** rotation about the vertical axis, driven by the moments of the front and rear tire forces about the center of gravity.
 
-**Key Features of the Model:**
+<img src="{{ '/Media/IndyCar/bicycle_model.png' | relative_url }}" alt="Bicycle vehicle model" width="80%"/>
 
-- **Lateral Dynamics:**  
-  The model accounts for the lateral movement of the vehicle. It explains how the vehicle responds to steering inputs by generating lateral tire forces.
-  
-- **Yaw Dynamics:**  
-  It also models the yaw motion—the rotation of the vehicle about its vertical axis. The yaw rate is influenced by the distribution of mass and the forces acting at the front and rear tires.
-  
-- **Simplified Representation:**  
-  By combining the left and right wheels into a single front and rear wheel, the bicycle model reduces the complexity of the vehicle dynamics while preserving the key behaviors necessary for control analysis.
+### Equations of Motion
 
-<img src="{{ '/Media/IndyCar/bicycle_model.png' | relative_url }}" alt="Bicycle Vehicle Model" width="80%"/>
+Using linear tire models, where each tire's lateral force is its cornering stiffness times its slip angle:
 
+**Lateral forces**
 
-#### System Modeling: Equations of Motion
-
-**Summation of Forces**  
-$$ \sum F = m \bigl(v_{\text{car}}\dot{\psi} + v_{\text{car}}\beta\bigr) = -C_r\,\beta +\frac{C_rb}{V_{car}}\Psi - C_f\bigl(\beta - \delta\bigr) - \frac{C_fa}{V_{car}}\Psi $$
-
-**Summation of Moments**  
 $$
-\sum M = J\,\ddot{\psi} = -b\left(\frac{-C_r}{V_{Car}} \left(V_{car}\beta - \dot{\Psi}b\right)\right) + a\left(\frac{-C_f}{V_{Car}} \left(V_{car}\beta - V_{car}\delta + \dot{\Psi}a\right)\right)
+m V \bigl(\dot{\beta} + \dot{\psi}\bigr) = -C_f\left(\beta + \frac{a\,\dot{\psi}}{V} - \delta\right) - C_r\left(\beta - \frac{b\,\dot{\psi}}{V}\right)
 $$
 
-Here:
-- $\(m\)$: The vehicle mass.
-- $\(v_{\text{car}}\)$: The constant forward velocity of the vehicle.
-- $\(\dot{\psi}\)$: The yaw rate, representing the rate of change of the vehicle’s yaw angle.
-- $\(\beta\)$: The sideslip angle, which quantifies the angle between the vehicle’s actual velocity vector and its longitudinal axis.
-- $\(\delta\)$: The steering angle, the angle by which the front wheels are turned.
-- $\(C_f\)$: The cornering stiffness of the front tires, indicating how much lateral force the tires generate per unit of slip angle.
-- $\(C_r\)$: The cornering stiffness of the rear tires, similar to \(C_f\) but for the rear axle.
-- $\(J\)$: The yaw moment of inertia of the vehicle, which quantifies its resistance to changes in yaw rate.
-- $\(a\)$: The distance from the vehicle’s center of gravity (CG) to the front axle.
-- $\(b\)$: The distance from the vehicle’s center of gravity (CG) to the rear axle.
+**Yaw moments**
 
+$$
+J \ddot{\psi} = a\,C_f\left(\delta - \beta - \frac{a\,\dot{\psi}}{V}\right) - b\,C_r\left(\frac{b\,\dot{\psi}}{V} - \beta\right)
+$$
 
-### Control Strategy
+where:
+- \\(m\\): vehicle mass
+- \\(V\\): forward speed, held constant
+- \\(\psi\\), \\(\dot{\psi}\\): yaw angle and yaw rate
+- \\(\beta\\): sideslip angle, between the vehicle's velocity vector and its longitudinal axis
+- \\(\delta\\): front wheel steering angle
+- \\(C_f\\), \\(C_r\\): front and rear tire cornering stiffness (lateral force per unit slip angle)
+- \\(J\\): yaw moment of inertia
+- \\(a\\), \\(b\\): distances from the center of gravity to the front and rear axles
 
-#### Cascaded PD Controller
+## Control Strategy
 
-Our control strategy employed a **cascaded PD controller** with two loops:
-- **Inner Loop:** Controls the input voltage to the motor on the steering column so the front tire angle tracks its reference.
-- **Outer Loop:** Commands the tire angle reference that steers the vehicle’s yaw angle toward the desired heading.
+The controller is a **cascaded PD controller** with two loops:
+- **Inner loop:** sets the steering motor voltage so the front tire angle tracks its reference.
+- **Outer loop:** commands the tire angle reference that steers the vehicle's yaw angle toward the desired heading.
 
-The following figure is the root locus used for pole-zero placement (controller gain selection) for the outer (yaw) loop controller. This root locus was generated for a vehicle at 108 m/s.
+The vehicle dynamics change with speed, so the outer loop gains were chosen for the speed of interest. The root locus below, used for pole placement (gain selection) in the outer (yaw) loop, was generated at 108 m/s.
 
 <img src="{{ '/Media/IndyCar/108RootLocus.jpg' | relative_url }}" alt="Root locus for the outer (yaw) loop controller at 108 m/s" width="60%"/>
 
+*The voltage-to-tire-angle (inner loop) model is omitted for brevity.*
 
-*Note: The voltage-to-tire angle (inner loop) model is omitted for brevity.*
+## Simulation Results
 
-### Simulation and Verification
+We tested the controller on a simulated lap of the Indianapolis Motor Speedway. It stayed stable up to **108 m/s (~242 mph)**, the fastest stable controller in the class, and it was also stable at lower speeds. The figures below are from the 108 m/s run.
 
-One of the most thrilling parts of the project was the validation phase. We tested the steering control system on an Indy 500 track simulation, achieving a top speed of **108 m/s (~242 mph)**, the fastest stable controller in the class. This was the highest speed at which our controller was stable; it was also stable at lower speeds. The high-speed tests are documented with several key figures:
+- **Steering motor voltage:** This is the voltage commanded to the steering column motor. The motor driver isn't modeled, but the plant does include the DC motor and the gearing that turns the wheels.
 
-- **Steering Column Motor Voltage Input:**
-  Here is the input voltage to the motor on the steering column. We are not modeling the dynamics of a motor driver here. The system dynamics include that of the DC motor, and the gearboxes, etc that allow the motor to move the wheels. 
-  <img src="{{ '/Media/IndyCar/voltage.png' | relative_url }}" alt="108 m/s Steering Motor Input" width="60%"/>
+  <img src="{{ '/Media/IndyCar/voltage.png' | relative_url }}" alt="Steering motor voltage at 108 m/s" width="60%"/>
 
-  This figure captures the voltage profile applied to the motor at 108 m/s, demonstrating the input dynamics of the system. This shows an area for improvement, as the voltage rapidly cycles between its maximum and minimum values. However, the controller is able to control the vehicle, despite the +/- 24V operational limit of the motor on the steering column.
-  
-- **Tire Angle Input/output:** 
-  Here is the tire angle input to the inner control loop. You can see both the desired tire angle and the actual tire angle the inner loop is able to deliver.
+  The voltage switches rapidly between the motor's ±24 V limits, which leaves room for improvement. Even with that saturation, the controller keeps the vehicle under control.
 
-  <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="108 m/s Tire Angle Input" width="60%"/>
+- **Tire angle:** This plot shows the desired tire angle (the outer loop's output and the inner loop's input) alongside the actual tire angle the inner loop delivers.
 
-  This image shows the tire angle command at 108 m/s, providing insight into the steering control under high-speed conditions. This was the output of the outer control loop, and the input to the inner control loop.
+  <img src="{{ '/Media/IndyCar/tireangle.png' | relative_url }}" alt="Commanded and actual tire angle at 108 m/s" width="60%"/>
 
-- **Simulated Vehicle Lap:**
-  Finally, putting everything together and running the controller on the password-protected p-code Indy car model, we can see the Indy car completing laps at the Indianapolis Motor Speedway. The vehicle just barely stays in the lanes on the turns; any faster and our turning radius is larger than the track (and given GPS waypoints) can support.
+- **Simulated lap:** Running the full controller on the p-code Indy car model, the car completes laps of the Indianapolis Motor Speedway. It barely stays within the track in the turns. Any faster, and the car's turning radius would be larger than the track and its GPS waypoints allow.
 
-    <img src="{{ '/Media/IndyCar/indycar108track.png' | relative_url }}" alt="Simulated lap at 108 m/s on the Indianapolis Motor Speedway" width="60%"/>
+  <img src="{{ '/Media/IndyCar/indycar108track.png' | relative_url }}" alt="Simulated lap at 108 m/s on the Indianapolis Motor Speedway" width="60%"/>
 
+## Lessons Learned
 
-
-## Lessons Learned and Future Directions
-
-This project was a tremendous learning experience:
-
-- **Real-World Application of Control Theory:**  
-  It underscored how classical methods can be adapted and extended to modern autonomous systems.
-  
-- **Teamwork and Iterative Design:**  
-  Collaborating with a diverse team of engineers taught us the value of iterative design and robust testing.
-  
-- **Future Work:**  
-  The success of our steering control system opens up new questions—such as integrating additional sensor feedback or adapting the controller for different racing conditions—which are exciting avenues for further exploration.
-
-## Conclusion
-
-Our autonomous steering control project not only provided hands-on experience with advanced control techniques but also demonstrated the potential for applying classical system dynamics to modern, high-speed applications. The blend of theory, controller design, and simulation-based validation has given us a robust foundation to push the boundaries of autonomous vehicle technology.
-
-For a detailed walkthrough of our methodology, challenges, and results, please refer to our final presentation and accompanying figures.
+- **Classical control applied to a modern problem:** Root-locus PD design, split into inner and outer loops, was enough to steer an autonomous race car at over 100 m/s in simulation, even with the motor voltage saturating.
+- **Teamwork and iteration:** Working as a team of four reinforced the value of iterative design and thorough testing.
+- **Future work:** Natural next steps include smoothing the saturated motor voltage, adding sensor feedback, and adapting the controller to different racing conditions.
