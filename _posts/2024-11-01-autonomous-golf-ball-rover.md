@@ -40,7 +40,7 @@ An Arduino Uno runs the whole sequence. The encoder on the drive motor tracks ho
 
 ### Launcher
 
-The launcher is spring-powered with an adjustable launch angle. Solenoids release the trigger to fire it. In an early version they pushed directly on the release, putting axial load on their plungers, which solenoids don't tolerate well. In the final revision they rotate a dial that trips the release instead.
+My teammates led the launcher design; my part was the solenoid trigger and its timing, plus some work on the launcher CAD. The launcher is spring-powered with an adjustable launch angle, and solenoids release the trigger to fire it. In an early version the solenoids pushed directly on the release, putting axial load on their plungers, which solenoids don't tolerate well. The team revised the design so the solenoids rotate a dial that trips the release instead.
 
 <img src="{{ '/Media/rover/launcher-funnel.jpg' | relative_url }}" alt="Top view of the launcher tube, the trigger solenoid, and the catch funnel with a golf ball resting in the padded cup" width="80%"/>
 
